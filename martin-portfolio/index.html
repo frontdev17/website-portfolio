@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Winebrenner Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+    <meta name="theme-color" content="#FF073A">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body id="top">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="assets/icons/favicon.png" alt="MW Logo" class="logo-icon">
+            <span class="logo-text">Martin Winebrenner</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Hey there, I'm <span class="highlight">Martin Winebrenner</span></h1>
+                <p class="typing-animation">Crafting seamless digital experiences, one pixel at a time.</p>
+                <div class="hero-buttons">
+                    <button class="btn" onclick="scrollToSection('projects')">Explore My Work</button>
+                    <button class="btn" onclick="scrollToSection('contact')">Let’s Build Something Amazing</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/profile.png" alt="Profile Picture">
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-divider"></div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+            I’m a front-end web developer specializing in interactive, modern websites.  
+            My goal is to create sleek, high-performance user experiences.  
+            I also have experience in SEO, digital branding, and website optimization.
+        </p>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-divider"></div>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-icons">
+            <img src="assets/icons/html.svg" alt="HTML">
+            <img src="assets/icons/css.svg" alt="CSS">
+            <img src="assets/icons/js.svg" alt="JavaScript">
+            <img src="assets/icons/bootstrap.svg" alt="Bootstrap">
+            <img src="assets/icons/jquery.svg" alt="jQuery">
+            <img src="assets/icons/shopify.svg" alt="Shopify">
+            <img src="assets/icons/canva.svg" alt="Canva">
+            <img src="assets/icons/git.svg" alt="Git">
+        </div>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-divider"></div>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Blackjack Game</h3>
+                <video src="assets/videos/blackjack.mp4" autoplay loop muted></video>
+                <a href="https://frontdev17.github.io/BlackJackGame-/" target="_blank" class="video-link">Live Demo</a>
+                <a href="https://github.com/frontdev17/BlackJackGame-/" class="github-link" target="_blank">GitHub Repo</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Weather App (SkyCast)</h3>
+                <video src="assets/videos/weather.mp4" autoplay loop muted></video>
+                <a href="https://frontdev17.github.io/SKYCAST/" target="_blank" class="video-link">Live Demo</a>
+                <a href="https://github.com/frontdev17/SKYCAST/" class="github-link" target="_blank">GitHub Repo</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Water Bottle Landing Page (PureVista)</h3>
+                <video src="assets/videos/water-bottle.mp4" autoplay loop muted></video>
+                <a href="https://frontdev17.github.io/PureVista/" target="_blank" class="video-link">Live Demo</a>
+                <a href="https://github.com/frontdev17/PureVista/" class="github-link" target="_blank">GitHub Repo</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Shopify E-Commerce Page</h3>
+                <video src="assets/videos/shopify.mp4" autoplay loop muted></video>
+                <a href="https://frontdev17.github.io/shopify-custom-page/" target="_blank" class="video-link">Live Demo</a>
+                <a href="https://github.com/frontdev17/shopify-custom-page/" class="github-link" target="_blank">GitHub Repo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-divider"></div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Let’s Work Together</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="confirmation-message" class="hidden">
+            <p>Message Sent Successfully!</p>
+        </div>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-divider"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">Created by <span class="highlighted-name">Martin Winebrenner</span></p>
+            <a href="https://github.com/frontdev17" target="_blank">
+                <img src="assets/icons/github.svg" alt="GitHub">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
