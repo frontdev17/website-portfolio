@@ -1,4 +1,4 @@
-// Smooth Scroll Function
+
 function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({
         behavior: 'smooth',
@@ -6,7 +6,7 @@ function scrollToSection(id) {
     });
 }
 
-// Sticky Navbar Effect
+
 window.addEventListener("scroll", function() {
     let navbar = document.querySelector(".navbar");
     if (window.scrollY > 50) {
@@ -18,7 +18,7 @@ window.addEventListener("scroll", function() {
     }
 });
 
-// Typing Animation Effect
+
 document.addEventListener("DOMContentLoaded", function () {
     let text = "Crafting seamless digital experiences, one pixel at a time.";
     let index = 0;
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     type();
 });
 
-// Skills Icons Hover Effect
+
 document.querySelectorAll(".skills-icons img").forEach(icon => {
     icon.addEventListener("mouseover", () => {
         icon.style.filter = "grayscale(0%) brightness(1)";
@@ -52,29 +52,51 @@ document.querySelectorAll(".skills-icons img").forEach(icon => {
     });
 });
 
-// Contact Form Submission (Send Email)
-document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault();
 
-    const formData = new FormData(this);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
+document.getElementById("contact-form").addEventListener("submit", async function (event) {
+    event.preventDefault(); 
 
-    const mailtoLink = `mailto:martinwinebrenner.dev@gmail.com?subject=Portfolio Contact from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
+    let form = event.target;
+    let formData = new FormData(form);
+    let confirmationMessage = document.getElementById("confirmation-message");
 
-    window.location.href = mailtoLink;
+    try {
+        let response = await fetch("https://formspree.io/f/xldjrdpk", {
+            method: "POST",
+            body: formData,
+            headers: {
+                "Accept": "application/json"
+            }
+        });
 
-    // Hide form and show success message only AFTER submission
-    document.getElementById("contact-form").style.display = "none";
-    document.getElementById("confirmation-message").classList.remove("hidden");
+        if (response.ok) {
+           
+            form.style.display = "none";
+
+           
+            confirmationMessage.classList.remove("hidden");
+            confirmationMessage.innerHTML = "✅ Message Sent Successfully!";
+            confirmationMessage.style.opacity = "0"; // Start hidden
+            confirmationMessage.style.display = "block";
+
+           
+            setTimeout(() => {
+                confirmationMessage.style.opacity = "1";
+                confirmationMessage.style.transition = "opacity 0.5s ease-in-out";
+            }, 100);
+        } else {
+            alert("There was a problem submitting the form. Please try again later.");
+        }
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    }
 });
 
-// Ensure Only ONE Favicon Appears in Navbar
+
 window.addEventListener("load", function () {
     let existingFavicon = document.querySelector(".nav-logo img");
     if (existingFavicon) {
-        existingFavicon.remove(); // Remove any duplicate favicon
+        existingFavicon.remove(); 
     }
 
     let navbarFavicon = document.createElement("img");
@@ -88,7 +110,7 @@ window.addEventListener("load", function () {
     }
 });
 
-// Ensure Videos Maintain Correct Size and Display Links
+
 window.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".project-card").forEach(card => {
         let video = card.querySelector("video");
@@ -110,11 +132,3 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-// Ensure Wave Transitions Display Properly
-window.addEventListener("load", function () {
-    document.querySelectorAll(".wave-divider").forEach(wave => {
-        wave.style.display = "block";
-    });
-});
-
